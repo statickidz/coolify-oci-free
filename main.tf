@@ -146,6 +146,47 @@ resource "oci_core_instance" "coolify_worker_2" {
   }
 }
 
+resource "oci_core_instance" "coolify_worker_3" {
+  display_name        = "coolify-worker-3"
+  compartment_id      = var.compartment_id
+  availability_domain = var.availability_domain_4
+
+  is_pv_encryption_in_transit_enabled = local.instance_config.is_pv_encryption_in_transit_enabled
+  shape                               = local.instance_config.shape
+
+  metadata = {
+    ssh_authorized_keys = local.instance_config.ssh_authorized_keys
+    user_data           = base64encode(file("./bin/deps.sh"))
+  }
+
+  create_vnic_details {
+    subnet_id = oci_core_subnet.coolify_subnet.id
+  }
+
+  agent_config {
+    is_management_disabled = false
+    is_monitoring_disabled = false
+  }
+
+  availability_config {
+    recovery_action = local.instance_config.availability_config.recovery_action
+  }
+
+  instance_options {
+    are_legacy_imds_endpoints_disabled = local.instance_config.instance_options.are_legacy_imds_endpoints_disabled
+  }
+
+  shape_config {
+    memory_in_gbs = local.instance_config.shape_config.memory_in_gbs
+    ocpus         = local.instance_config.shape_config.ocpus
+  }
+
+  source_details {
+    source_id   = local.instance_config.source_details.source_id
+    source_type = local.instance_config.source_details.source_type
+  }
+}
+
 output "coolify_dashboard" {
   value = "http://${oci_core_instance.coolify_main.public_ip}:8000/ (wait 2-3 minutes to finish Coolify installation)"
 }
@@ -156,4 +197,8 @@ output "coolify_worker_1" {
 
 output "coolify_worker_2" {
   value = "${oci_core_instance.coolify_worker_2.public_ip} (user it to add the server in Coolify Dashboard)"
+}
+
+output "coolify_worker_3" {
+  value = "${oci_core_instance.coolify_worker_3.public_ip} (user it to add the server in Coolify Dashboard)"
 }
