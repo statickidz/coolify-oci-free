@@ -63,6 +63,7 @@ resource "oci_core_instance" "coolify_main" {
   }
 }
 
+# Worker instances (similar to main instance)
 resource "oci_core_instance" "coolify_worker_1" {
   display_name        = "coolify-worker-1"
   compartment_id      = var.compartment_id
