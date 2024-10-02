@@ -74,6 +74,7 @@ resource "oci_core_instance" "coolify_worker_1" {
 
   metadata = {
     ssh_authorized_keys = local.instance_config.ssh_authorized_keys
+    user_data           = base64encode(file("./bin/deps.sh"))
   }
 
   create_vnic_details {
@@ -114,6 +115,7 @@ resource "oci_core_instance" "coolify_worker_2" {
 
   metadata = {
     ssh_authorized_keys = local.instance_config.ssh_authorized_keys
+    user_data           = base64encode(file("./bin/deps.sh"))
   }
 
   create_vnic_details {
