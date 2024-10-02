@@ -7,6 +7,10 @@ resource "oci_core_instance" "generated_oci_core_instance" {
   availability_config {
     recovery_action = "RESTORE_INSTANCE"
   }
+  instance_options {
+    are_legacy_imds_endpoints_disabled = "false"
+  }
+  is_pv_encryption_in_transit_enabled = "true"
   create_vnic_details {
     subnet_id = oci_core_subnet.generated_oci_core_subnet.id
   }
@@ -75,6 +79,10 @@ resource "oci_core_instance" "generated_oci_worker_instance_1" {
   availability_config {
     recovery_action = "RESTORE_INSTANCE"
   }
+  instance_options {
+    are_legacy_imds_endpoints_disabled = "false"
+  }
+  is_pv_encryption_in_transit_enabled = "true"
   create_vnic_details {
     subnet_id = oci_core_subnet.generated_oci_core_subnet.id
   }
@@ -143,6 +151,10 @@ resource "oci_core_instance" "generated_oci_worker_instance_2" {
   availability_config {
     recovery_action = "RESTORE_INSTANCE"
   }
+  instance_options {
+    are_legacy_imds_endpoints_disabled = "false"
+  }
+  is_pv_encryption_in_transit_enabled = "true"
   create_vnic_details {
     subnet_id = oci_core_subnet.generated_oci_core_subnet.id
   }
