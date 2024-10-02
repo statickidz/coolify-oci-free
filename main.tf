@@ -31,7 +31,7 @@ resource "oci_core_instance" "coolify_main" {
   shape                               = local.instance_config.shape
 
   metadata = {
-    ssh_authorized_keys = local.ssh_authorized_keys
+    ssh_authorized_keys = local.instance_config.ssh_authorized_keys
     user_data           = base64encode(file("./bin/coolify.sh"))
   }
 
@@ -72,7 +72,7 @@ resource "oci_core_instance" "coolify_worker_1" {
   shape                               = local.instance_config.shape
 
   metadata = {
-    ssh_authorized_keys = local.ssh_authorized_keys
+    ssh_authorized_keys = local.instance_config.ssh_authorized_keys
   }
 
   create_vnic_details {
@@ -112,7 +112,7 @@ resource "oci_core_instance" "coolify_worker_2" {
   shape                               = local.instance_config.shape
 
   metadata = {
-    ssh_authorized_keys = local.ssh_authorized_keys
+    ssh_authorized_keys = local.instance_config.ssh_authorized_keys
   }
 
   create_vnic_details {
