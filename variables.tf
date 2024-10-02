@@ -4,7 +4,7 @@ variable "ssh_authorized_keys" {
 }
 
 variable "compartment_id" {
-  description = "The OCID of the compartment. Find it: Profile > Identity domain: Default > OCID (copy)"
+  description = "The OCID of the compartment. Find it: Profile - Identity domain: Default - OCID (copy)"
   type        = string
 }
 
