@@ -122,7 +122,6 @@ resource "oci_core_instance" "coolify_worker_1" {
   compartment_id      = var.compartment_id
   availability_domain = var.availability_domain_2
 
-
   is_pv_encryption_in_transit_enabled = local.instance_config.is_pv_encryption_in_transit_enabled
   shape                               = local.instance_config.shape
 
@@ -159,7 +158,6 @@ resource "oci_core_instance" "coolify_worker_2" {
   display_name        = "coolify-worker-2"
   compartment_id      = var.compartment_id
   availability_domain = var.availability_domain_3
-
 
   is_pv_encryption_in_transit_enabled = local.instance_config.is_pv_encryption_in_transit_enabled
   shape                               = local.instance_config.shape
