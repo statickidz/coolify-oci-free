@@ -32,7 +32,7 @@ Before deploying, ensure you have the following:
 The following variables must be defined in `variables.tf` or passed during `terraform apply`:
 
 - `compartment_id`: OCI compartment where instances will be deployed.
-- `availability_domain_1`, `availability_domain_2`, `availability_domain_3`: Availability domains to deploy the instances.
+- `availability_domain_1`, `availability_domain_2`, `availability_domain_3`, `availability_domain_4`: Availability domains to deploy the instances.
 - `ssh_authorized_keys`: Your SSH public key to access the instances.
 - `instance_shape`: The shape (e.g., VM.Standard.E2.1.Micro) to be used for the instances.
 - `memory_in_gbs`: The memory allocated to each instance.
