@@ -64,18 +64,6 @@ locals {
   agent_config = {
     is_management_disabled = false
     is_monitoring_disabled = false
-    plugins_config = [
-      { desired_state = "DISABLED", name = "Vulnerability Scanning" },
-      { desired_state = "DISABLED", name = "Management Agent" },
-      { desired_state = "ENABLED", name = "Custom Logs Monitoring" },
-      { desired_state = "DISABLED", name = "Compute RDMA GPU Monitoring" },
-      { desired_state = "ENABLED", name = "Compute Instance Monitoring" },
-      { desired_state = "DISABLED", name = "Compute HPC RDMA Auto-Configuration" },
-      { desired_state = "DISABLED", name = "Compute HPC RDMA Authentication" },
-      { desired_state = "ENABLED", name = "Cloud Guard Workload Protection" },
-      { desired_state = "DISABLED", name = "Block Volume Management" },
-      { desired_state = "DISABLED", name = "Bastion" }
-    ]
   }
 }
 
@@ -95,7 +83,6 @@ resource "oci_core_instance" "coolify_main" {
   agent_config {
     is_management_disabled = local.agent_config.is_management_disabled
     is_monitoring_disabled = local.agent_config.is_monitoring_disabled
-    plugins_config         = local.agent_config.plugins_config
   }
 
   availability_config {
@@ -132,7 +119,6 @@ resource "oci_core_instance" "coolify_worker_1" {
   agent_config {
     is_management_disabled = local.agent_config.is_management_disabled
     is_monitoring_disabled = local.agent_config.is_monitoring_disabled
-    plugins_config         = local.agent_config.plugins_config
   }
 
   availability_config {
@@ -169,7 +155,6 @@ resource "oci_core_instance" "coolify_worker_2" {
   agent_config {
     is_management_disabled = local.agent_config.is_management_disabled
     is_monitoring_disabled = local.agent_config.is_monitoring_disabled
-    plugins_config         = local.agent_config.plugins_config
   }
 
   availability_config {
