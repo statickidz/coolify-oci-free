@@ -1,25 +1,30 @@
 variable "ssh_authorized_keys" {
-  description = "SSH public key for instances."
+  description = "SSH public key for instances. For example: ssh-rsa AAEAB3NaC1yc2EAAAA....3xcoeATR ssh-key-2024-09-03"
   type        = string
 }
 
 variable "compartment_id" {
-  description = "The OCID of the compartment."
+  description = "The OCID of the compartment. Find it: Profile > Identity domain: Default > OCID (copy)"
   type        = string
 }
 
 variable "availability_domain_1" {
-  description = "Availability domain for instance 1."
+  description = "Availability domain for coolify-main instance. For example: AaJg:EU-FRANKFURT-1-AD-1"
   type        = string
 }
 
 variable "availability_domain_2" {
-  description = "Availability domain for instance 2."
+  description = "Availability domain for coolify-worker-1 instance. For example: AaJg:EU-FRANKFURT-1-AD-1"
   type        = string
 }
 
 variable "availability_domain_3" {
-  description = "Availability domain for instance 3."
+  description = "Availability domain for coolify-worker-2 instance. For example: AaJg:EU-FRANKFURT-1-AD-1"
+  type        = string
+}
+
+variable "availability_domain_4" {
+  description = "Availability domain for coolify-worker-3 instance. For example: AaJg:EU-FRANKFURT-1-AD-1"
   type        = string
 }
 
