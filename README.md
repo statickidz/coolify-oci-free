@@ -17,7 +17,6 @@ For more information, take a look at his landing page at [coolify.io](https://co
 
 Before deploying, ensure you have the following:
 - Oracle Cloud Infrastructure (OCI) account with Free Tier resources available.
-- OCI CLI configured locally with proper authentication (API key or similar).
 - SSH public key for instance access.
 
 ## Project Structure
