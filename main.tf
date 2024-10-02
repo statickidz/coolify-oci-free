@@ -4,7 +4,7 @@ resource "oci_core_instance" "generated_oci_core_instance" {
   availability_domain = var.availability_domain_2
   compartment_id      = var.compartment_id
   create_vnic_details {
-    subnet_id = var.subnet_id
+    subnet_id = "${oci_core_subnet.generated_oci_core_subnet.id}"
   }
   metadata = {
     "ssh_authorized_keys" = var.ssh_authorized_keys
@@ -24,7 +24,7 @@ resource "oci_core_instance" "generated_oci_worker_instance_1" {
   availability_domain = var.availability_domain_3
   compartment_id      = var.compartment_id
   create_vnic_details {
-    subnet_id = var.subnet_id
+    subnet_id = "${oci_core_subnet.generated_oci_core_subnet.id}"
   }
   metadata = {
     "ssh_authorized_keys" = var.ssh_authorized_keys
@@ -44,7 +44,7 @@ resource "oci_core_instance" "generated_oci_worker_instance_2" {
   availability_domain = var.availability_domain_1
   compartment_id      = var.compartment_id
   create_vnic_details {
-    subnet_id = var.subnet_id
+    subnet_id = "${oci_core_subnet.generated_oci_core_subnet.id}"
   }
   metadata = {
     "ssh_authorized_keys" = var.ssh_authorized_keys

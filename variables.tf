@@ -1,3 +1,8 @@
+variable "ssh_authorized_keys" {
+  description = "SSH public key for instances."
+  type        = string
+}
+
 variable "compartment_id" {
   description = "The OCID of the compartment."
   type        = string
@@ -15,17 +20,6 @@ variable "availability_domain_2" {
 
 variable "availability_domain_3" {
   description = "Availability domain for instance 3."
-  type        = string
-}
-
-variable "subnet_id" {
-  description = "The subnet ID."
-  type        = string
-  default     = "${oci_core_subnet.generated_oci_core_subnet.id}"
-}
-
-variable "ssh_authorized_keys" {
-  description = "SSH public key for instances."
   type        = string
 }
 
