@@ -147,16 +147,13 @@ resource "oci_core_instance" "coolify_worker_2" {
 }
 
 output "coolify_dashboard" {
-  value       = "http://${oci_core_instance.coolify_main.public_ip}:8000/"
-  description = "Coolify Dashboard URL"
+  value = "http://${oci_core_instance.coolify_main.public_ip}:8000/ (wait 2-3 minutes to finish Coolify installation)"
 }
 
 output "coolify_worker_1" {
-  value       = oci_core_instance.coolify_worker_1.public_ip
-  description = "coolify-worker-1 Public IP"
+  value = "${oci_core_instance.coolify_worker_1.public_ip} (user it to add the server in Coolify Dashboard)"
 }
 
 output "coolify_worker_2" {
-  value       = oci_core_instance.coolify_worker_2.public_ip
-  description = "coolify-worker-2 Public IP"
+  value = "${oci_core_instance.coolify_worker_1.public_ip} (user it to add the server in Coolify Dashboard)"
 }
