@@ -155,5 +155,5 @@ output "coolify_worker_1" {
 }
 
 output "coolify_worker_2" {
-  value = "${oci_core_instance.coolify_worker_1.public_ip} (user it to add the server in Coolify Dashboard)"
+  value = "${oci_core_instance.coolify_worker_2.public_ip} (user it to add the server in Coolify Dashboard)"
 }
