@@ -2,6 +2,17 @@
 
 This Terraform project deploys a Coolify instance along with some worker nodes in the Oracle Cloud Infrastructure (OCI) Free Tier. Coolify is an open-source platform to deploy and manage applications with ease.
 
+## About Coolify
+Coolify is an open-source & self-hostable alternative to Heroku / Netlify / Vercel / etc.
+
+It helps you manage your servers, applications, and databases on your own hardware; you only need an SSH connection. You can manage VPS, Bare Metal, Raspberry PIs, and anything else.
+
+For more information, take a look at his landing page at [coolify.io](https://coolify.io).
+
+## Deploy Coolify to Oracle Cloud
+
+[![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/statickidz/coolify-oci-free/archive/refs/heads/main.zip)
+
 ## Prerequisites
 
 Before deploying, ensure you have the following:
@@ -28,7 +39,3 @@ The following variables must be defined in `variables.tf` or passed during `terr
 - `memory_in_gbs`: The memory allocated to each instance.
 - `ocpus`: Number of OCPUs allocated to each instance.
 - `source_image_id`: The OCID of the custom or default image to use for the instances.
-
-## Deploy to Oracle Cloud
-
-[![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/statickidz/coolify-oci-free/archive/refs/heads/main.zip)
