@@ -156,7 +156,7 @@ output "coolify_worker_1" {
   description = "coolify-worker-1 Public IP"
 }
 
-output "coolify_worker_1" {
+output "coolify_worker_2" {
   value       = oci_core_instance.coolify_worker_2.public_ip
   description = "coolify-worker-2 Public IP"
 }
