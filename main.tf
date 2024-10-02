@@ -85,18 +85,36 @@ resource "oci_core_instance" "coolify_main" {
   compartment_id      = var.compartment_id
   availability_domain = var.availability_domain_1
 
+  is_pv_encryption_in_transit_enabled = local.instance_config.is_pv_encryption_in_transit_enabled
+  shape                               = local.instance_config.shape
+
   create_vnic_details {
     subnet_id = oci_core_subnet.coolify_subnet.id
   }
 
-  agent_config                        = local.agent_config
-  availability_config                 = local.instance_config.availability_config
-  instance_options                    = local.instance_config.instance_options
-  is_pv_encryption_in_transit_enabled = local.instance_config.is_pv_encryption_in_transit_enabled
-  metadata                            = local.instance_config.metadata
-  shape                               = local.instance_config.shape
-  shape_config                        = local.instance_config.shape_config
-  source_details                      = local.instance_config.source_details
+  agent_config {
+    is_management_disabled = local.agent_config.is_management_disabled
+    is_monitoring_disabled = local.agent_config.is_monitoring_disabled
+    plugins_config         = local.agent_config.plugins_config
+  }
+
+  availability_config {
+    recovery_action = local.instance_config.availability_config.recovery_action
+  }
+
+  instance_options {
+    are_legacy_imds_endpoints_disabled = local.instance_config.instance_options.are_legacy_imds_endpoints_disabled
+  }
+
+  shape_config {
+    memory_in_gbs = local.instance_config.shape_config.memory_in_gbs
+    ocpus         = local.instance_config.shape_config.ocpus
+  }
+
+  source_details {
+    source_id   = local.instance_config.source_details.source_id
+    source_type = local.instance_config.source_details.source_type
+  }
 }
 
 resource "oci_core_instance" "coolify_worker_1" {
@@ -104,18 +122,37 @@ resource "oci_core_instance" "coolify_worker_1" {
   compartment_id      = var.compartment_id
   availability_domain = var.availability_domain_2
 
+
+  is_pv_encryption_in_transit_enabled = local.instance_config.is_pv_encryption_in_transit_enabled
+  shape                               = local.instance_config.shape
+
   create_vnic_details {
     subnet_id = oci_core_subnet.coolify_subnet.id
   }
 
-  agent_config                        = local.agent_config
-  availability_config                 = local.instance_config.availability_config
-  instance_options                    = local.instance_config.instance_options
-  is_pv_encryption_in_transit_enabled = local.instance_config.is_pv_encryption_in_transit_enabled
-  metadata                            = local.instance_config.metadata
-  shape                               = local.instance_config.shape
-  shape_config                        = local.instance_config.shape_config
-  source_details                      = local.instance_config.source_details
+  agent_config {
+    is_management_disabled = local.agent_config.is_management_disabled
+    is_monitoring_disabled = local.agent_config.is_monitoring_disabled
+    plugins_config         = local.agent_config.plugins_config
+  }
+
+  availability_config {
+    recovery_action = local.instance_config.availability_config.recovery_action
+  }
+
+  instance_options {
+    are_legacy_imds_endpoints_disabled = local.instance_config.instance_options.are_legacy_imds_endpoints_disabled
+  }
+
+  shape_config {
+    memory_in_gbs = local.instance_config.shape_config.memory_in_gbs
+    ocpus         = local.instance_config.shape_config.ocpus
+  }
+
+  source_details {
+    source_id   = local.instance_config.source_details.source_id
+    source_type = local.instance_config.source_details.source_type
+  }
 }
 
 resource "oci_core_instance" "coolify_worker_2" {
@@ -123,16 +160,35 @@ resource "oci_core_instance" "coolify_worker_2" {
   compartment_id      = var.compartment_id
   availability_domain = var.availability_domain_3
 
+
+  is_pv_encryption_in_transit_enabled = local.instance_config.is_pv_encryption_in_transit_enabled
+  shape                               = local.instance_config.shape
+
   create_vnic_details {
     subnet_id = oci_core_subnet.coolify_subnet.id
   }
 
-  agent_config                        = local.agent_config
-  availability_config                 = local.instance_config.availability_config
-  instance_options                    = local.instance_config.instance_options
-  is_pv_encryption_in_transit_enabled = local.instance_config.is_pv_encryption_in_transit_enabled
-  metadata                            = local.instance_config.metadata
-  shape                               = local.instance_config.shape
-  shape_config                        = local.instance_config.shape_config
-  source_details                      = local.instance_config.source_details
+  agent_config {
+    is_management_disabled = local.agent_config.is_management_disabled
+    is_monitoring_disabled = local.agent_config.is_monitoring_disabled
+    plugins_config         = local.agent_config.plugins_config
+  }
+
+  availability_config {
+    recovery_action = local.instance_config.availability_config.recovery_action
+  }
+
+  instance_options {
+    are_legacy_imds_endpoints_disabled = local.instance_config.instance_options.are_legacy_imds_endpoints_disabled
+  }
+
+  shape_config {
+    memory_in_gbs = local.instance_config.shape_config.memory_in_gbs
+    ocpus         = local.instance_config.shape_config.ocpus
+  }
+
+  source_details {
+    source_id   = local.instance_config.source_details.source_id
+    source_type = local.instance_config.source_details.source_type
+  }
 }
