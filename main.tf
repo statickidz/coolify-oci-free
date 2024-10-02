@@ -1,17 +1,9 @@
 # Instance config
 locals {
   instance_config = {
-    availability_config = {
-      recovery_action = "RESTORE_INSTANCE"
-    }
-    instance_options = {
-      are_legacy_imds_endpoints_disabled = false
-    }
     is_pv_encryption_in_transit_enabled = true
-    metadata = {
-      ssh_authorized_keys = var.ssh_authorized_keys
-    }
-    shape = var.instance_shape
+    ssh_authorized_keys                 = var.ssh_authorized_keys
+    shape                               = var.instance_shape
     shape_config = {
       memory_in_gbs = var.memory_in_gbs
       ocpus         = var.ocpus
@@ -19,6 +11,12 @@ locals {
     source_details = {
       source_id   = var.source_image_id
       source_type = "image"
+    }
+    availability_config = {
+      recovery_action = "RESTORE_INSTANCE"
+    }
+    instance_options = {
+      are_legacy_imds_endpoints_disabled = false
     }
   }
 }
@@ -33,7 +31,7 @@ resource "oci_core_instance" "coolify_main" {
   shape                               = local.instance_config.shape
 
   metadata = {
-    ssh_authorized_keys = local.metadata.ssh_authorized_keys
+    ssh_authorized_keys = local.ssh_authorized_keys
     user_data           = base64encode(file("./bin/coolify.sh"))
   }
 
@@ -74,7 +72,7 @@ resource "oci_core_instance" "coolify_worker_1" {
   shape                               = local.instance_config.shape
 
   metadata = {
-    ssh_authorized_keys = local.metadata.ssh_authorized_keys
+    ssh_authorized_keys = local.ssh_authorized_keys
   }
 
   create_vnic_details {
@@ -114,7 +112,7 @@ resource "oci_core_instance" "coolify_worker_2" {
   shape                               = local.instance_config.shape
 
   metadata = {
-    ssh_authorized_keys = local.metadata.ssh_authorized_keys
+    ssh_authorized_keys = local.ssh_authorized_keys
   }
 
   create_vnic_details {
