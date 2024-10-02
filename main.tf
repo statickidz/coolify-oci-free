@@ -32,6 +32,8 @@ resource "oci_core_instance" "coolify_main" {
   is_pv_encryption_in_transit_enabled = local.instance_config.is_pv_encryption_in_transit_enabled
   shape                               = local.instance_config.shape
 
+  user_data = base64encode(file("./bin/install-coolify.sh"))
+
   create_vnic_details {
     subnet_id = oci_core_subnet.coolify_subnet.id
   }
