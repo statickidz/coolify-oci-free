@@ -143,3 +143,30 @@ resource "oci_core_instance" "coolify_worker_2" {
     source_type = local.instance_config.source_details.source_type
   }
 }
+
+# Output the public and private IPs of the main instance
+output "coolify_main_private_ip" {
+  value = oci_core_instance.coolify_main.private_ip
+}
+
+output "coolify_main_public_ip" {
+  value = oci_core_instance.coolify_main.public_ip
+}
+
+# Output the public and private IPs of the first worker instance
+output "coolify_worker_1_private_ip" {
+  value = oci_core_instance.coolify_worker_1.private_ip
+}
+
+output "coolify_worker_1_public_ip" {
+  value = oci_core_instance.coolify_worker_1.public_ip
+}
+
+# Output the public and private IPs of the second worker instance
+output "coolify_worker_2_private_ip" {
+  value = oci_core_instance.coolify_worker_2.private_ip
+}
+
+output "coolify_worker_2_public_ip" {
+  value = oci_core_instance.coolify_worker_2.public_ip
+}
