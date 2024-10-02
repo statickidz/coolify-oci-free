@@ -9,15 +9,36 @@ It helps you manage your servers, applications, and databases on your own hardwa
 
 For more information, take a look at his landing page at [coolify.io](https://coolify.io).
 
-## Deploy Coolify to Oracle Cloud
-
-[![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/statickidz/coolify-oci-free/archive/refs/heads/main.zip)
-
 ## Prerequisites
 
 Before deploying, ensure you have the following:
 - Oracle Cloud Infrastructure (OCI) account with Free Tier resources available.
 - SSH public key for instance access.
+
+## Deploy
+
+[![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/statickidz/coolify-oci-free/archive/refs/heads/main.zip)
+
+## Add workers to Coolify
+
+First of all, you may find your `localhost` server is not reachable, to solve that you only need to update the user to `ubuntu`.
+
+![coolify-1](img/image.png)
+
+Also, you might need to update your private localhost key on your `Keys & Tokens` section in order to connect to the worker instances.
+
+![coolify-2](img/image-1.png)
+
+#### Steps to add worker servers
+- Go to Servers > Add
+    - Name: The name of the server
+    - IP Address/Domain: If you want to use a wildcard domain use the private instance IP, otherwise take the public one.
+    - User: ubuntu
+    ![coolify-3](img/image-4.png)
+- Check your proxy is running and you are good to go.
+    ![coolify-4](img/image-2.png)
+- Your server now should look like this.
+    ![coolify-5](img/image-3.png)
 
 ## Project Structure
 
