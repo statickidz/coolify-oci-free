@@ -32,7 +32,7 @@ resource "oci_core_instance" "coolify_main" {
   is_pv_encryption_in_transit_enabled = local.instance_config.is_pv_encryption_in_transit_enabled
   shape                               = local.instance_config.shape
 
-  metadata {
+  metadata = {
     ssh_authorized_keys = local.metadata.ssh_authorized_keys
     user_data           = base64encode(file("./bin/coolify.sh"))
   }
@@ -73,7 +73,7 @@ resource "oci_core_instance" "coolify_worker_1" {
   is_pv_encryption_in_transit_enabled = local.instance_config.is_pv_encryption_in_transit_enabled
   shape                               = local.instance_config.shape
 
-  metadata {
+  metadata = {
     ssh_authorized_keys = local.metadata.ssh_authorized_keys
   }
 
@@ -113,7 +113,7 @@ resource "oci_core_instance" "coolify_worker_2" {
   is_pv_encryption_in_transit_enabled = local.instance_config.is_pv_encryption_in_transit_enabled
   shape                               = local.instance_config.shape
 
-  metadata {
+  metadata = {
     ssh_authorized_keys = local.metadata.ssh_authorized_keys
   }
 
