@@ -1,4 +1,4 @@
-#!/usr/bin/sudo bash
+#!/bin/bash
 
 # Add ubuntu to sudoers
 echo "ubuntu ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
