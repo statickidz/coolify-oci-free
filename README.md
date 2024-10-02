@@ -34,10 +34,15 @@ Also, you might need to update your private localhost key on your `Keys & Tokens
     - Name: The name of the server
     - IP Address/Domain: If you want to use a wildcard domain use the private instance IP, otherwise take the public one.
     - User: ubuntu
+
     ![coolify-3](img/image-4.png)
+
 - Check your proxy is running and you are good to go.
+
     ![coolify-4](img/image-2.png)
-- Your server now should look like this.
+
+- Your server screen now should look like this.
+
     ![coolify-5](img/image-3.png)
 
 ## Project Structure
