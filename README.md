@@ -21,11 +21,11 @@ Before deploying, ensure you have the following:
 
 ## Add workers to Coolify
 
-First of all, you may find your `localhost` server is not reachable, to solve that you only need to update the user to `ubuntu`.
+First of all, you may find your `localhost` server is not reachable, to solve that you only need to update the user to `root`.
 
 ![coolify-1](img/image.png)
 
-Also, you might need to update your private localhost key on your `Keys & Tokens` section in order to connect to the worker instances.
+Also, you might need to add your private key on your `Keys & Tokens` section in order to connect to the worker instances.
 
 ![coolify-2](img/image-1.png)
 
