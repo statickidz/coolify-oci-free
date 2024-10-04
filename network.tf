@@ -3,7 +3,6 @@ resource "oci_core_vcn" "coolify_vcn" {
   cidr_block     = "10.0.0.0/16"
   compartment_id = var.compartment_id
   display_name   = "network-coolify"
-  dns_label      = "vcn09121104"
 }
 
 # Subnet configuration
@@ -11,7 +10,6 @@ resource "oci_core_subnet" "coolify_subnet" {
   cidr_block     = "10.0.0.0/24"
   compartment_id = var.compartment_id
   display_name   = "subnet-coolify"
-  dns_label      = "subnet09121104"
   route_table_id = oci_core_vcn.coolify_vcn.default_route_table_id
   vcn_id         = oci_core_vcn.coolify_vcn.id
 
