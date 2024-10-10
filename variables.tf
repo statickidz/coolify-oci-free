@@ -9,7 +9,7 @@ variable "compartment_id" {
 }
 
 variable "num_worker_instances" {
-  description = "Number of Coolify worker instances to deploy."
+  description = "Number of Coolify worker instances to deploy. 3 is the maximum for free tier."
   type        = number
   default     = 3 # Default number of worker instances
 }
