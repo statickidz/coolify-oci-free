@@ -188,7 +188,7 @@ resource "oci_core_instance" "coolify_worker" {
 }
 
 output "coolify_dashboard" {
-  value = "http://${oci_core_instance.coolify_main.public_ip}:8000/ (wait 2-3 minutes to finish Coolify installation)"
+  value = "http://${oci_core_instance.coolify_main.public_ip}:8000/ (wait 3-5 minutes to finish Coolify installation)"
 }
 
 output "coolify_worker_ips" {
