@@ -39,11 +39,6 @@ resource "oci_core_instance" "coolify_main" {
     subnet_id = oci_core_subnet.coolify_subnet.id
   }
 
-  agent_config {
-    is_management_disabled = false
-    is_monitoring_disabled = false
-  }
-
   availability_config {
     recovery_action = local.instance_config.availability_config.recovery_action
   }
@@ -61,6 +56,7 @@ resource "oci_core_instance" "coolify_main" {
     source_id   = local.instance_config.source_details.source_id
     source_type = local.instance_config.source_details.source_type
   }
+
   agent_config {
     is_management_disabled = "false"
     is_monitoring_disabled = "false"
@@ -125,11 +121,6 @@ resource "oci_core_instance" "coolify_worker" {
     subnet_id = oci_core_subnet.coolify_subnet.id
   }
 
-  agent_config {
-    is_management_disabled = false
-    is_monitoring_disabled = false
-  }
-
   availability_config {
     recovery_action = local.instance_config.availability_config.recovery_action
   }
@@ -147,6 +138,7 @@ resource "oci_core_instance" "coolify_worker" {
     source_id   = local.instance_config.source_details.source_id
     source_type = local.instance_config.source_details.source_type
   }
+
   agent_config {
     is_management_disabled = "false"
     is_monitoring_disabled = "false"
