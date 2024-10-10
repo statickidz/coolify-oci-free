@@ -105,8 +105,10 @@ resource "oci_core_instance" "coolify_main" {
 
 # Worker instances (similar to main instance)
 resource "oci_core_instance" "coolify_worker" {
-  count               = var.num_worker_instances
+  count = var.num_worker_instances
+
   display_name        = "coolify-worker-${count.index + 1}"
+  compartment_id      = var.compartment_id
   availability_domain = var.availability_domain_workers
 
   is_pv_encryption_in_transit_enabled = local.instance_config.is_pv_encryption_in_transit_enabled
