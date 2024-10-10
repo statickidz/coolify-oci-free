@@ -9,7 +9,7 @@ locals {
       ocpus         = var.ocpus
     }
     source_details = {
-      source_id   = var.source_image_id
+      source_id   = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaa3rxaqcvwe2vxxffm4dfivmfb3apn4inqehxgntjrx3f7p4hzk5rq" # Ubuntu 20.04 LTS
       source_type = "image"
     }
     availability_config = {

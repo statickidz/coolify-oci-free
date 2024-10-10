@@ -65,4 +65,3 @@ The following variables must be defined in `variables.tf` or passed during `terr
 - `instance_shape`: The shape (e.g., VM.Standard.E2.1.Micro) to be used for the instances.
 - `memory_in_gbs`: The memory allocated to each instance.
 - `ocpus`: Number of OCPUs allocated to each instance.
-- `source_image_id`: The OCID of the custom or default image to use for the instances.

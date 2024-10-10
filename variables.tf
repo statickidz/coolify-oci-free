@@ -9,9 +9,9 @@ variable "compartment_id" {
 }
 
 variable "num_worker_instances" {
-  description = "Number of Coolify worker instances to deploy. 3 is the maximum for free tier."
+  description = "Number of Coolify worker instances to deploy."
   type        = number
-  default     = 3 # Default number of worker instances
+  default     = 1
 }
 
 variable "availability_domain_main" {
@@ -40,10 +40,4 @@ variable "ocpus" {
   description = "OCPUs for instance shape config. 1 OCPU is the maximum for free tier with 3 working nodes."
   type        = string
   default     = "1" # OCI Free
-}
-
-variable "source_image_id" {
-  description = "Source image OCID."
-  type        = string
-  default     = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaa3rxaqcvwe2vxxffm4dfivmfb3apn4inqehxgntjrx3f7p4hzk5rq" # Ubuntu 20.04 LTS
 }
