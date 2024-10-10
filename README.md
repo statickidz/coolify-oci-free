@@ -57,9 +57,11 @@ Also, you might need to add your private key on your `Keys & Tokens` section in 
 
 The following variables must be defined in `variables.tf` or passed during `terraform apply`:
 
-- `compartment_id`: OCI compartment where instances will be deployed.
-- `availability_domain_1`, `availability_domain_2`, `availability_domain_3`, `availability_domain_4`: Availability domains to deploy the instances.
 - `ssh_authorized_keys`: Your SSH public key to access the instances.
+- `compartment_id`: OCI compartment where instances will be deployed.
+- `num_worker_instances`: Number of Coolify worker instances to deploy.
+- `availability_domain_main`: Availability domains to deploy the main instance.
+- `availability_domain_workers`: Availability domains to deploy the worker instances.
 - `instance_shape`: The shape (e.g., VM.Standard.E2.1.Micro) to be used for the instances.
 - `memory_in_gbs`: The memory allocated to each instance.
 - `ocpus`: Number of OCPUs allocated to each instance.

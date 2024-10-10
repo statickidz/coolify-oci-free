@@ -20,7 +20,7 @@ variable "availability_domain_main" {
 }
 
 variable "availability_domain_workers" {
-  description = "Availability domain for coolify-main instance. For example: AaJg:EU-FRANKFURT-1-AD-2"
+  description = "Availability domain for coolify-worker instances. For example: AaJg:EU-FRANKFURT-1-AD-2"
   type        = string
 }
 
