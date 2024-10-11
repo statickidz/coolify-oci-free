@@ -21,7 +21,7 @@ Before deploying, ensure you have the following:
 
 ## Add workers to Coolify
 
-First of all, you may find your `localhost` server is not reachable, to solve that you only need to update the user to `root`.
+First of all, you may find your `localhost` server is not reachable, to solve that you only need to update the user to `ubuntu`.
 
 ![coolify-1](img/image.png)
 
