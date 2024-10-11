@@ -2,6 +2,13 @@ resource "random_id" "ran_id" {
   byte_length = 6
 }
 
+resource "oci_core_vcn" "generated_oci_core_vcn" {
+  cidr_block     = "10.0.0.0/16"
+  compartment_id = var.compartment_id
+  display_name   = "vcn-20241011-1038"
+  dns_label      = "vcn10111038"
+}
+
 # VCN configuration
 resource "oci_core_vcn" "coolify_vcn" {
   cidr_block     = "10.0.0.0/16"
