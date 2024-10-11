@@ -50,8 +50,8 @@ Also, you might need to add your private key on your `Keys & Tokens` section in 
 - `main.tf`: Contains the configuration for Coolify instances and workers.
 - `variables.tf`: Specifies the required input variables like compartment ID, instance shape, memory, and OCPU count.
 - `outputs.tf`: Displays the dashboard and worker instance IPs upon deployment.
-- `bin/coolify.sh`: Bash script to install Coolify on the main instance.
-- `bin/deps.sh`: Bash script to install necessary dependencies on worker instances.
+- `bin/coolify-main.sh`: Bash script to install Coolify on the main instance.
+- `bin/coolify-worker.sh`: Bash script to install necessary dependencies on worker instances.
 
 ## Terraform Variables
 
