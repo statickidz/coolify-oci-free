@@ -8,6 +8,11 @@ variable "compartment_id" {
   type        = string
 }
 
+variable "source_image_id" {
+  description = "Source Ubuntu 22.04 image OCID. Find it for your region: https://docs.oracle.com/en-us/iaas/images/image/128dbc42-65a9-4ed0-a2db-be7aa584c726/index.htm. For example: ocid1.image.oc1.phx.aaaaaaaa47msfuw77sfw4eabf23tko6e6kbbbogbeuo6po6ni3lfgjkc5j2q"
+  type        = string
+}
+
 variable "num_worker_instances" {
   description = "Number of Coolify worker instances to deploy."
   type        = number
