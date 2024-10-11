@@ -36,7 +36,11 @@ resource "oci_core_instance" "coolify_main" {
   }
 
   create_vnic_details {
-    subnet_id = oci_core_subnet.coolify_subnet.id
+    display_name              = "vnc-coolify"
+    subnet_id                 = oci_core_subnet.coolify_subnet.id
+    assign_ipv6ip             = false
+    assign_private_dns_record = true
+    assign_public_ip          = true
   }
 
   availability_config {
@@ -120,7 +124,11 @@ resource "oci_core_instance" "coolify_worker" {
   }
 
   create_vnic_details {
-    subnet_id = oci_core_subnet.coolify_subnet.id
+    display_name              = "vnc-coolify"
+    subnet_id                 = oci_core_subnet.coolify_subnet.id
+    assign_ipv6ip             = false
+    assign_private_dns_record = true
+    assign_public_ip          = true
   }
 
   availability_config {
