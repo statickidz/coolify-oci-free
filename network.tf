@@ -1,5 +1,5 @@
 resource "random_id" "ran_id" {
-  byte_length = 6
+  byte_length = 3
 }
 
 # VCN configuration
