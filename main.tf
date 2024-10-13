@@ -21,9 +21,16 @@ locals {
   }
 }
 
+# Random resource ID
+resource "random_string" "resource_code" {
+  length  = 5
+  special = false
+  upper   = false
+}
+
 # Main instance
 resource "oci_core_instance" "coolify_main" {
-  display_name        = "coolify-main"
+  display_name        = "coolify-main-${random_string.resource_code.result}"
   compartment_id      = var.compartment_id
   availability_domain = var.availability_domain_main
 
@@ -36,7 +43,7 @@ resource "oci_core_instance" "coolify_main" {
   }
 
   create_vnic_details {
-    display_name              = "vnic-coolify"
+    display_name              = "vnic-coolify-main-${random_string.resource_code.result}"
     subnet_id                 = oci_core_subnet.coolify_subnet.id
     assign_ipv6ip             = false
     assign_private_dns_record = true
@@ -111,7 +118,7 @@ resource "oci_core_instance" "coolify_main" {
 resource "oci_core_instance" "coolify_worker" {
   count = var.num_worker_instances
 
-  display_name        = "coolify-worker-${count.index + 1}"
+  display_name        = "coolify-worker-${count.index + 1}-${random_string.resource_code.result}"
   compartment_id      = var.compartment_id
   availability_domain = var.availability_domain_workers
 
@@ -124,7 +131,7 @@ resource "oci_core_instance" "coolify_worker" {
   }
 
   create_vnic_details {
-    display_name              = "vnic-coolify"
+    display_name              = "vnic-coolify-worker-${random_string.resource_code.result}"
     subnet_id                 = oci_core_subnet.coolify_subnet.id
     assign_ipv6ip             = false
     assign_private_dns_record = true

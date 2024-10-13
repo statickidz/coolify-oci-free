@@ -1,15 +1,21 @@
 #!/bin/bash
 
-# Add ubuntu to sudoers
+# Add ubuntu SSH authorized keys to the root user
+mkdir -p /root/.ssh
+cp /home/ubuntu/.ssh/authorized_keys /root/.ssh/
+chown root:root /root/.ssh/authorized_keys
+chmod 600 /root/.ssh/authorized_keys
+
+# Add ubuntu user to sudoers
 echo "ubuntu ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # OpenSSH
-sudo apt install openssh-server
-sudo systemctl status sshd
+apt install openssh-server
+systemctl status sshd
 
 # Permit root login
-sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
-sudo systemctl restart sshd
+sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+systemctl restart sshd
 
 # Install Coolify
-sudo curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
+curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
