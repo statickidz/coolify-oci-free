@@ -2,16 +2,16 @@
 resource "oci_core_vcn" "coolify_vcn" {
   cidr_block     = "10.0.0.0/16"
   compartment_id = var.compartment_id
-  display_name   = "network-coolify-${random_id.ran_id.dec}"
-  dns_label      = "vcn${random_id.ran_id.dec}"
+  display_name   = "network-coolify-${random_string.resource_code.result}"
+  dns_label      = "vcn${random_string.resource_code.result}"
 }
 
 # Subnet configuration
 resource "oci_core_subnet" "coolify_subnet" {
   cidr_block     = "10.0.0.0/24"
   compartment_id = var.compartment_id
-  display_name   = "subnet-coolify-${random_id.ran_id.dec}"
-  dns_label      = "subnet${random_id.ran_id.dec}"
+  display_name   = "subnet-coolify-${random_string.resource_code.result}"
+  dns_label      = "subnet${random_string.resource_code.result}"
   route_table_id = oci_core_vcn.coolify_vcn.default_route_table_id
   vcn_id         = oci_core_vcn.coolify_vcn.id
 
