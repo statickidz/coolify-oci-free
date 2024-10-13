@@ -9,6 +9,11 @@ It helps you manage your servers, applications, and databases on your own hardwa
 
 For more information, take a look at his landing page at [coolify.io](https://coolify.io).
 
+## OCI Free Tier Overview
+Oracle Cloud Infrastructure offers a Free Tier that provides a limited number of resources for free, including VM.Standard.E2.1.Micro instances, which come with 1 OCPU and 1 GB of RAM. These instances are suitable for light workloads and testing environments like Coolify.
+
+The Free Tier also includes networking and storage options that will allow you to run small-scale applications without incurring any costs, as long as the limits are respected. For more details, refer to [OCI Free Tier](https://www.oracle.com/cloud/free/).
+
 ## Prerequisites
 
 Before deploying, ensure you have the following:
@@ -18,6 +23,8 @@ Before deploying, ensure you have the following:
 ## Deploy
 
 [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/statickidz/coolify-oci-free/archive/refs/heads/main.zip)
+
+Clicking the "Deploy to Oracle Cloud" button will automatically load the Oracle Cloud Resource Manager, which allows you to deploy the entire infrastructure defined in this Terraform project. Before starting the deployment, you will be prompted to configure certain parameters like SSH keys, the number of worker instances, and the OCI compartment. Once you review and confirm, the stack will be deployed.
 
 ## Add workers to Coolify
 
@@ -29,17 +36,17 @@ First of all, you need to add your private key on your `Keys & Tokens` section i
 - Go to Servers > Add
     - Name: The name of the server
     - IP Address/Domain: If you want to use a wildcard domain use the private instance IP, otherwise take the public one.
-    - User: ubuntu
+    - User: root
 
-    ![coolify-3](img/image-4.png)
+    ![coolify-2](img/image-4.png)
 
 - Check your proxy is running and you are good to go.
 
-    ![coolify-4](img/image-2.png)
+    ![coolify-3](img/image-2.png)
 
 - Your server screen now should look like this.
 
-    ![coolify-5](img/image-3.png)
+    ![coolify-4](img/image-3.png)
 
 ## Project Structure
 
