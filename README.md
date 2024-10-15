@@ -50,11 +50,18 @@ First of all, you need to add your private key on your `Keys & Tokens` section i
 
 ## Project Structure
 
-- `main.tf`: Contains the configuration for Coolify instances and workers.
-- `variables.tf`: Specifies the required input variables like compartment ID, instance shape, memory, and OCPU count.
-- `outputs.tf`: Displays the dashboard and worker instance IPs upon deployment.
-- `bin/coolify-main.sh`: Bash script to install Coolify on the main instance.
-- `bin/coolify-worker.sh`: Bash script to install necessary dependencies on worker instances.
+-   `bin/`: Contains bash scripts for setting up Coolify on both the main instance and the worker instances.
+    -   `coolify-main.sh`: Script to install Coolify on the main instance.
+    -   `coolify-worker.sh`: Script to configure necessary dependencies on worker instances.
+-   `img/`: Directory for images used in the README (e.g., screenshots of Coolify setup).
+-   `helper.tf`: Contains helper functions and reusable modules to streamline the infrastructure setup.
+-   `locals.tf`: Defines local values used throughout the Terraform configuration, such as dynamic values or reusable expressions.
+-   `main.tf`: Core Terraform configuration file that defines the infrastructure for Coolify's main and worker instances.
+-   `network.tf`: Configuration for setting up the required OCI networking resources (VCNs, subnets, security lists, etc.).
+-   `output.tf`: Specifies the output variables such as the IP addresses for the dashboard and worker nodes.
+-   `providers.tf`: Declares the required cloud providers and versions, particularly for Oracle Cloud Infrastructure.
+-   `README.md`: This file, providing instructions on deployment and usage.
+-   `variables.tf`: Defines input variables used in the project, including compartment ID, SSH keys, instance shape, and more.
 
 ## Terraform Variables
 
