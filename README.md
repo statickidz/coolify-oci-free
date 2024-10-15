@@ -24,7 +24,7 @@ Before deploying, ensure you have the following:
 
 [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/statickidz/coolify-oci-free/archive/refs/heads/main.zip)
 
-Clicking the "Deploy to Oracle Cloud" button will automatically load the Oracle Cloud Resource Manager, which allows you to deploy the entire infrastructure defined in this Terraform project. Before starting the deployment, you will be prompted to configure certain parameters like SSH keys, the number of worker instances, and the OCI compartment. Once you review and confirm, the stack will be deployed.
+*Clicking the "Deploy to Oracle Cloud" button will automatically load the Oracle Cloud Resource Manager, which allows you to deploy the entire infrastructure defined in this Terraform project. Before starting the deployment, you will be prompted to configure certain parameters like SSH keys, the number of worker instances, and the OCI compartment. Once you review and confirm, the stack will be deployed.*
 
 ## Add workers to Coolify
 
