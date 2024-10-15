@@ -3,11 +3,16 @@
 This Terraform project deploys a Coolify instance along with some worker nodes in the Oracle Cloud Infrastructure (OCI) Free Tier. Coolify is an open-source platform to deploy and manage applications with ease.
 
 ## About Coolify
+
+![Coolify Logo](img/coolify-logo.png)
+
 Coolify is an open-source & self-hostable alternative to Heroku / Netlify / Vercel / etc.
 
 It helps you manage your servers, applications, and databases on your own hardware; you only need an SSH connection. You can manage VPS, Bare Metal, Raspberry PIs, and anything else.
 
 For more information, take a look at his landing page at [coolify.io](https://coolify.io).
+
+![Coolify Screenshot](img/coolify-screenshot.webp)
 
 ## OCI Free Tier Overview
 Oracle Cloud Infrastructure offers a Free Tier that provides a limited number of resources for free, including VM.Standard.E2.1.Micro instances, which come with 1 OCPU and 1 GB of RAM. These instances are suitable for light workloads and testing environments like Coolify.
