@@ -15,9 +15,12 @@ For more information, take a look at his landing page at [coolify.io](https://co
 ![Coolify Screenshot](doc/coolify-screenshot.webp)
 
 ## OCI Free Tier Overview
-Oracle Cloud Infrastructure offers a Free Tier that provides a limited number of resources for free, including VM.Standard.E2.1.Micro instances, which come with 1 OCPU and 1 GB of RAM. These instances are suitable for light workloads and testing environments like Coolify.
 
-The Free Tier also includes networking and storage options that will allow you to run small-scale applications without incurring any costs, as long as the limits are respected. For more details, refer to [OCI Free Tier](https://www.oracle.com/cloud/free/).
+Oracle Cloud Infrastructure (OCI) offers a Free Tier with resources ideal for light workloads, such as the VM.Standard.E2.1.Micro instance. These resources are free as long as usage remains within the limits.
+
+For detailed information about the free tier, visit [OCI Free Tier](https://www.oracle.com/cloud/free/).
+
+*Note: Free Tier instances are subject to availability, and you might encounter "Out of Capacity" errors. To bypass this, upgrade to a paid account. This keeps your free-tier benefits but removes the capacity limitations, ensuring access to higher-tier resources if needed.*
 
 ## Prerequisites
 
