@@ -38,23 +38,13 @@ Before deploying, ensure you have the following:
 
 First of all, you need to add your private key on your `Keys & Tokens` section in order to connect to the worker instances.
 
-![coolify-1](doc/image-1.png)
-
 #### Steps to add worker servers
 - Go to Servers > Add
     - Name: The name of the server
     - IP Address/Domain: If you want to use a wildcard domain use the private instance IP, otherwise take the public one.
     - User: root
-
-    ![coolify-2](doc/image-4.png)
-
+    - Private Key: The one you created previously.
 - Check your proxy is running and you are good to go.
-
-    ![coolify-3](doc/image-2.png)
-
-- Your server screen now should look like this.
-
-    ![coolify-4](doc/image-3.png)
 
 ## Project Structure
 
@@ -73,7 +63,7 @@ First of all, you need to add your private key on your `Keys & Tokens` section i
 
 ## Terraform Variables
 
-The following variables must be defined in `variables.tf` or passed during `terraform apply`:
+The following variables are defined in `variables.tf`:
 
 - `ssh_authorized_keys`: Your SSH public key to access the instances.
 - `compartment_id`: OCI compartment where instances will be deployed.
