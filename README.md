@@ -2,6 +2,12 @@
 
 This Terraform project deploys a Coolify instance along with some worker nodes in the Oracle Cloud Infrastructure (OCI) Free Tier. Coolify is an open-source platform to deploy and manage applications with ease.
 
+## Deploy
+
+[![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/statickidz/coolify-oci-free/archive/refs/heads/main.zip)
+
+*Clicking the "Deploy to Oracle Cloud" button will load the Oracle Cloud Resource Manager to deploy the infrastructure described in this Terraform project. During deployment, you'll be prompted to configure the stack parameters. Review the settings, then launch the stack deployment.*
+
 ## About Coolify
 
 ![Coolify Logo](doc/coolify-logo.png)
@@ -27,12 +33,6 @@ For detailed information about the free tier, visit [OCI Free Tier](https://www.
 Before deploying, ensure you have the following:
 - Oracle Cloud Infrastructure (OCI) account with Free Tier resources available.
 - SSH public key for instance access.
-
-## Deploy
-
-[![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/statickidz/coolify-oci-free/archive/refs/heads/main.zip)
-
-*Clicking the "Deploy to Oracle Cloud" button will automatically load the Oracle Cloud Resource Manager, which allows you to deploy the entire infrastructure defined in this Terraform project. Before starting the deployment, you will be prompted to configure certain parameters like SSH keys, the number of worker instances, and the OCI compartment. Once you review and confirm, the stack will be deployed.*
 
 ## Add workers to Coolify
 
