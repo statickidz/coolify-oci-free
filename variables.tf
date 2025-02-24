@@ -1,5 +1,5 @@
 variable "ssh_authorized_keys" {
-  description = "The OCID of the compartment. Find it: Profile → Tenancy: youruser → Tenancy information → OCID https://cloud.oracle.com/tenancy"
+  description = ""SSH public key for instances. For example: ssh-rsa AAEAB3NaC1yc2EAAAA....3xcoeATR ssh-key-2024-09-03""
   type        = string
 }
 
