@@ -1,5 +1,5 @@
 variable "ssh_authorized_keys" {
-  description = ""SSH public key for instances. For example: ssh-rsa AAEAB3NaC1yc2EAAAA....3xcoeATR ssh-key-2024-09-03""
+  description = "SSH public key for instances. For example: ssh-rsa AAEAB3NaC1yc2EAAAA....3xcoeATR ssh-key-2024-09-03"
   type        = string
 }
 
